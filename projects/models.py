@@ -4,8 +4,6 @@ import uuid
 from django.db.models.deletion import CASCADE
 from users.models import Profile
 # Create your models here.
-
-
 class Project(models.Model):
     ## here .Model Represents that it is officially a class
     owner = models.ForeignKey(
@@ -70,7 +68,7 @@ class Review(models.Model):
     # up is actual value in the data base
     # Up vote is what it shows us
     owner = models.ForeignKey(Profile, on_delete=models.CASCADE, null=True,blank=True   )
-    ## If the project is deleted we del-ete all the reviews  
+    ## CASCADE - If the project is deleted we delete all the reviews  
     project = models.ForeignKey(Project, on_delete=models.CASCADE)
     # We have the foreign key here as we need to link which project is this particular review about to store it in the data base
     # on_delete = model.CASCADE deletes our review if the project is deleted
@@ -88,6 +86,7 @@ class Review(models.Model):
         return self.value
     ## The __str__ method is called when the following functions 
     # are invoked on the object and return a string
+
 
 class Tag(models.Model):
     name = models.CharField(max_length=200)
