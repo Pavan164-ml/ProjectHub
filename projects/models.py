@@ -8,7 +8,7 @@ class Project(models.Model):
     ## here .Model Represents that it is officially a class
     owner = models.ForeignKey(
         Profile, null=True, blank=True, on_delete=models.CASCADE)
-       
+    
     title = models.CharField(max_length=200)
     description = models.TextField(null=True, blank=True)
      # null=True means that we are allowed to submit the for without any description - can be null in the database

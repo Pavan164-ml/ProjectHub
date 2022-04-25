@@ -1,5 +1,6 @@
-<p>{{project.title}}</p>
+<p>{{project.id}}</p>
 <p>{{project.description}}</p>
+<img src="{{project.featured_image.url}}" alt="">
 {% for tag in project.tags.all %}
 <span style="border: 1px solid grey">{{tag}}</span>
 {% endfor %}
